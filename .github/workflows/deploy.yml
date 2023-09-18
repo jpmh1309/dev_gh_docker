@@ -9,8 +9,10 @@ env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
+    timeout-minutes: 10
     environment: testing
     runs-on: ubuntu-latest
+    container: node:17
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.xy6k5vr.mongodb.net
